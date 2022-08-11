@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">Botanas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        sizeLg="3"
+        sizeXs="12"
+        sizeMd="4"
+        sizeSm="6"
+        *ngFor="let alimento of botanas"
+      >
+        <ion-card class="card" mode="ios" (click)="agregar(alimento.idBotana)">
+          <ion-card-header>
+            <ion-card-title class="tit">{{ alimento.nombre}}</ion-card-title>
+          </ion-card-header>
+          <ion-img src="{{alimento.imagen}}" class="img"></ion-img>
+          <ion-card-content>
+            <p class="par">{{alimento.descripcion}}</p>
+            <span>
+              <ion-label>{{alimento.precio | currency}}</ion-label>
+            </span>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

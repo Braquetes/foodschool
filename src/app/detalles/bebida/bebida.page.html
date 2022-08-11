@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center"> {{bebida.nombre}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="card-group" align="center">
+    <div class="card">
+      <div class="row">
+        <div class="col-12">
+          <br />
+          <img src="{{bebida.imagen}}" alt="imagen" />
+          <h5 class="card-title" style="font-size: 40px">{{bebida.nombre}}</h5>
+          <span class="badge badge-warning badge-pill" style="font-size: 20px"
+            >${{bebida.precio}}</span
+          >
+        </div>
+      </div>
+      <div>
+        <br />
+        <select [(ngModel)]="model.cantidad" class="form-control">
+          <option selected value disabled>Cantidad</option>
+          <option selected *ngFor="let i of index;" [value]="i">{{i}}</option>
+        </select>
+        <br />
+        <div>
+          <ion-button
+            color="success"
+            shape="round"
+            size="small"
+            (click)="agregar(model.cantidad)"
+            >Añadir producto</ion-button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "foodschool",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

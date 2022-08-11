@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Formulario de registro de nuevos usuarios -->
+
+<ion-content>
+  <div class="container">
+    <div class="container-phone">
+      <div class="header">
+        <h1 align="center" style="font-size: xx-large; color: #0095cb">
+          Food School
+        </h1>
+      </div>
+      <div class="interfaz">
+        <div class="indicaciones">
+          <h1 class="titulo-form">Registrate</h1>
+          <p class="text-body1">¿Eres un usuario nuevo?</p>
+          <p class="text-body1">
+            Rellena el siguiente formulario para formar parte de la familia
+          </p>
+        </div>
+
+        <form class="formulario" (ngSubmit)="save(form)" #form="ngForm">
+          <input
+            type="text"
+            name="nombres"
+            class="usuario"
+            placeholder="Ingrese su nombre"
+            [(ngModel)]="registro.nombres"
+          />
+          <input
+            type="text"
+            name="apellidos"
+            class="apellidos"
+            value=""
+            placeholder="Apellidos"
+            [(ngModel)]="registro.apellidos"
+          />
+          <input
+            type="email"
+            name="username"
+            class="email"
+            placeholder="Ingrese su nombre de usuario"
+            [(ngModel)]="registro.username"
+          />
+          <input
+            type="password"
+            name="password"
+            class="pass"
+            placeholder="Ingrese su contraseña"
+            [(ngModel)]="registro.password"
+          />
+          <div class="edad-age">
+            <input
+              type="tel"
+              name="telefono"
+              class="nTel"
+              placeholder="Numero Telefonico"
+              [(ngModel)]="registro.telefono"
+            />
+            <input
+              type="number"
+              name="edad"
+              class="edad"
+              placeholder="Edad"
+              [(ngModel)]="registro.edad"
+            />
+          </div>
+          <div class="botones">
+            <button type="submit" class="btn btn-primario">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

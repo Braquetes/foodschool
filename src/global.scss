@@ -1,0 +1,323 @@
+
+
+
+/***********ESTILOS GENERALES**********************/
+
+/*Colores*/
+:root{
+    --color-azul-principal: #0065FF;
+    --color-iconos: #5D5D5D;
+    --color-outline-inputs: #E0E0E0;
+    --color-texto-inputs-inactive: #4D4D4D;
+    --color-errores: #B00020;
+    --color-titulos-formularios: #172B4D;
+    --color-hover-btnPrimario: #00498C;
+    --color-hover-btnSecundario: #E0ECFF;
+    --color-blanco: #ffffff;
+    --color-negro: #000000;
+}
+
+ion-title {
+    color: white;
+}
+/*MEDIDAS DE PANTALLA MOVIL*/
+
+
+.interfaz{
+    margin: 15px;
+    padding: 10px;
+}
+/*GOOGLE ICONS*/
+.material-icons{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+/***********************ESTILOS TEXTO********************/
+.logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: red;
+}
+
+span, .error{
+    color: red;
+    font-weight: bolder;
+}
+
+p, .bienvenido{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+p, .frase{
+    font-size: 1.12rem;
+    line-height:24px ;
+    font-weight: 300;
+}
+h1, .titulo-form{
+    color: var(--color-titulos-formularios);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+    padding: 2px 0px;
+    font-weight: bolder;
+}
+h2, .titulo-form-h2{
+    color: var(--color-titulos-formularios);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.registrate p, text-botones{
+    text-align: center;
+    font-size: 0.87rem;
+    font-weight: bold;
+}
+p, text-body1 {
+    padding-bottom: 5px;
+    font-size: 0.87rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.15;
+    color: black;
+}
+/*ESTILOS DE BOTONES*/
+/*CONTENEDOR DE BOTONES*/
+.botones{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: space-between;
+    text-align: center;
+    margin: 25px 0px;
+}
+.botones > .btn{
+    width: 100% ;
+    height: 3.31rem;
+    padding: 15px 0px;
+    margin: 10px 0px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.btn-primario{
+    color: var(--color-blanco);
+    background-color: var(--color-azul-principal);
+}
+.btn-primario:hover{
+    background-color: var(--color-hover-btnPrimario);
+}
+.btn-secundario{
+    background-color: var(--color-blanco);
+    color: var(--color-azul-principal);
+    border: solid 1px var(--color-azul-principal);
+}
+.btn-secundario:hover{
+    background-color: var(--color-hover-btnSecundario);
+}
+.btn-terciario{
+    color: var(--color-azul-principal);
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    height: 2rem
+}
+
+/*Texto interfaz bienvenida*/
+.text{
+    align-content: space-between;
+}
+/*HEADER IMAGEN REGISTRO E INICIO DE SESIÓN*/
+.header img{
+    //max-width: 100%;
+    max-height: 16rem;
+    display: flex;
+    justify-content: center;
+}
+/*ESTILOS INTERFAZ REGISTRO - MUDATE*/
+.indicaciones{
+    text-align: left;
+}
+.indicaciones .iconos-gofa{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.indicaciones .iconos-gofa i{
+    margin: 0 15px;
+    color: var(--color-azul-principal);
+    font-size: 25px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: solid 1px var(--color-azul-principal);
+}
+
+
+/*BARRA DE NAVEGACIÓN*/
+nav ul {
+    background-color: var(--color-azul-principal);
+    width: 100%;
+    height: 50px;
+    padding: 14px;
+    display: flex;
+}
+nav .link-navigation{
+    font-weight: bold;
+    color: var(--color-blanco);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+
+}
+/***************ESTILOS FORMULARIOS*********************/
+/*Contenedor del formulario*/
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+/*Si el formulario tiene dos columnas cambiar 
+las propiedades*/
+.formulario .edad-age{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+.formulario label{
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin: 0px 0px 0px 0px;
+}
+/*Al estar escribiendo sobre un input*/
+.formulario  input:focus{
+    color: var(--color-negro);
+    border: solid 1px var(--color-azul-principal);
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+.formulario input{
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    background-size: 20px; 
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-inputs-inactive);
+    width: 100%;
+    outline: none;
+    height: 53px;
+    margin: 10px 0px 10px 0px;
+    padding: 10px 0px 10px 35px;
+    border-radius: 5px;
+    border: solid 1px var(--color-outline-inputs);
+    color: white;
+}
+.formulario select{
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-inputs-inactive);
+    width: 100%;
+    outline: none;
+    height: 53px;
+    margin: 10px 0px ;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px var(--color-outline-inputs);
+}
+/*Agregar icono al input
+Poner clase al input*/
+.formulario .usuario, .apellidos{
+    background-image: url("./assets/imgmudt/ICONOS/usuario.svg");
+    
+}
+
+.formulario .campos{
+    background-image: url("./assets/imgmudt/ICONOS/documento.svg");
+}
+
+.formulario .email{
+    background-image: url("./assets/imgmudt/ICONOS/@.svg");
+}
+.formulario .pass{
+    background-image: url("./assets/imgmudt/ICONOS/SVG_Password.svg");
+}
+.formulario .nTel{
+    background-image:  url("./assets/imgmudt/SVG_Telefono.svg");
+}
+.formulario  input[type="submit"] {
+    background-color: var(--color-azul-principal);
+    color: var(--color-blanco);
+    font-size: 0.87rem;
+    width: 100%;
+    font-weight: bold;
+    justify-items: center;
+    text-align: center;
+    padding: 10px 50px 10px ;
+    text-transform: uppercase;
+    line-height: 1.5;
+    letter-spacing: 1.25px;
+}
+.formulario .text-btn3{
+    color: var(--color-azul-principal);
+    font-weight: bold;
+    height: 53px;
+    padding: 10px 0px ;
+    font-size: 14px;
+    text-align: center;
+}
+
+.table {
+    max-width: 100vh
+}
+
+ion-icon{
+    color: white;
+    outline-color: white;
+}
+
+.caja{
+    margin: 10px;
+    background-color: inherit;
+    background: inherit;
+}
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";

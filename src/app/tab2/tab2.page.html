@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title align="center"> Orden </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--List Group en donde tenemos los datos de los productos-->
+  <div class="col-12 p-3">
+    <ul class="list-group text-center">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center active"
+      >
+        Orden
+        <span class="badge badge-success badge-pill">Precio</span>
+        <span class="badge badge-primary badge-pill">Cantidad</span>
+      </li>
+      <!--uso del NgFor para mandar a llamar a los datos del TS-->
+      <li
+        *ngFor="let alimento of pedido"
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <span class="badge badge-success badge-pill">{{alimento.nombre}}</span>
+        <span class="badge badge-success badge-pill">${{alimento.total}}</span>
+        <span class="badge badge-primary badge-pill"
+          >{{alimento.cantidad}}</span
+        >
+      </li>
+      <br />
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center active"
+      >
+        Total
+        <span class="badge badge-danger badge-pill">$ {{FS.total}}</span>
+      </li>
+    </ul>
+  </div>
+  <!--NgIf de confirmacion del pedido realizado-->
+  <div class="col-md-12 text-center" *ngIf="!pedidoFinalizado">
+    <form #form="ngForm">
+      <div class="col-12">
+        <ion-card
+          style="display: flex; justify-content: center; padding-left: 30px"
+          align="center"
+        >
+          <ion-card-header>
+            <ion-card-title>Descripcion:</ion-card-title>
+          </ion-card-header>
+
+          <!-- <input type="texta" name="detalles"  [(ngModel)]="detalles" class="form-control"/> -->
+        </ion-card>
+      </div>
+      <textarea
+        name="detalles"
+        cols="40"
+        rows="5"
+        style="background-color: white"
+        [(ngModel)]="detalles"
+      ></textarea>
+
+      <button type="button" class="btn btn-success" (click)="finalizarPedido()">
+        Terminar orden
+      </button>
+    </form>
+  </div>
+  <!--Enlace para generar el codigo qr a traves de una funcion-->
+  <div style="width: 100%; display: flex; justify-content: center">
+    <ngx-qrcode
+      *ngIf="pedidoFinalizado"
+      [elementType]="elementType"
+      [value]="qrData"
+    ></ngx-qrcode>
+  </div>
+</ion-content>

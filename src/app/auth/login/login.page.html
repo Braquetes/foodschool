@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+ <!-- Codigo del formulario de login -->
+<ion-content>
+  <div class="container">
+    <div class="container-phone">
+      <div class="header">
+        <h1 align="center" style="font-size: xx-large; color: #0095cb">
+          Food School
+        </h1>
+      </div>
+      <div class="interfaz">
+        <div class="indicaciones">
+          <h1 class="titulo-form">INICAR SESIÓN</h1>
+          <p class="text-body1">
+            Es un gusto tenerte de vuelta <br />
+            Ingresa tus datos para iniciar Sesión
+          </p>
+        </div>
+        <form class="formulario" [formGroup]="login">
+          <input
+            type="email"
+            formControlName="email"
+            minlength="4"
+            maxlength="40"
+            [pattern]="emailCheck"
+            class="input usuario"
+            required
+            placeholder="Ingrese su Usuario"
+          />
+          <span
+            class="error"
+            *ngIf="emailPattern()"
+            class="form-text text-danger"
+          >
+            Dirección de correo no válida</span
+          >
+          <input
+            type="password"
+            formControlName="password"
+            class="input pass"
+            minlength="8"
+            maxlength="15"
+            required
+            placeholder="Ingrese su contraseña"
+          />
+          <!-- Validaciones -->
+          <span
+            class="error"
+            *ngIf="campoValido('password')"
+            class="form-text text-danger"
+          >
+            Mínimo 8 letras</span
+          >
+          <div class="botones">
+            <!-- <a [routerLink]="['/restore']" class="btn-terciario">Olvide mi contraseña</a> -->
+            <button
+              type="sumbit"
+              (click)="save()"
+              [disabled]="login.invalid"
+              class="btn btn-primario"
+            >
+              INICIAR SESIÓN
+            </button>
+            <p class="text-body1 btn">
+              ¿No tienes cuenta?
+              <a [routerLink]="['/registro']" class="btn-terciario"
+                >Registrate</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>
